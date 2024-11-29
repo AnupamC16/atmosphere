@@ -137,7 +137,7 @@ public class IOUtils {
         boolean readGetBody = r.getAtmosphereConfig().getInitParameter(ApplicationConfig.READ_GET_BODY, false);
         if (!readGetBody && ((AtmosphereResourceImpl) r).getRequest(false).getMethod().equalsIgnoreCase("GET")) {
             logger.debug("Blocking an I/O read operation from a GET request. To enable GET + body, set {} to true", ApplicationConfig.READ_GET_BODY);
-            return stringBuilder;
+            return stringBuilder; //okay
         }
 
         AtmosphereRequest request = r.getRequest();
